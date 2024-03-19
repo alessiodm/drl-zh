@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "drl-zh"
+version = "0.1.0"
+description = "Deep Reinforcement Learning: Zero to Hero!"
+authors = ["Alessio <alessio.dellamotta@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+gymnasium = {extras = ["accept-rom-license", "atari", "box2d", "other"], version = "^0.29.1"}
+pygame = "^2.5.2"
+matplotlib = "^3.8.2"
+ipykernel = "^6.28.0"
+notebook = "^7.0.6"
+moviepy = "^1.0.3"
+torch = "^2.2.0"
+pandas = "^2.2.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

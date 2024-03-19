@@ -1,0 +1,5 @@
+{
+  "editor.tabSize": 4,
+  // Make sure the Python imports work also in the 'solution' folder.
+  "jupyter.notebookFileRoot": "${workspaceFolder}"
+}
