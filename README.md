@@ -18,7 +18,7 @@ To make sure we can focus on learning, the environment setup is _opinionated_ ðŸ
 
  * Install [Miniconda](https://docs.anaconda.com/free/miniconda/)<br>
    <small>
-    Why conda? Because it's a full envinronment manager, and we can choose the Python version too.
+    Why conda? Because it's a full environment manager, and we can choose the Python version too.
    </small>
  * Checkout this Git repository, and `cd` into its folder.
  * Create and activate the `drlzh` virtual environment:
