@@ -47,4 +47,4 @@ settings consistency, running on Jupyter might require some tweaks to code and i
 Open the first `00_Intro.ipynb` notebook in Visual Studio Code, and follow along! From there, just
 keep moving on to the next notebooks. If you get stuck, feel free to check the `/solution` folder.
 
-For an expanded treatment and step-by-step coding, check out the YouTube videos!
+For an expanded treatment and step-by-step coding, stay tuned for the upcoming YouTube videos!
