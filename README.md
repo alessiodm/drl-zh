@@ -44,7 +44,9 @@ To make sure we can focus on learning, the environment setup is _opinionated_ ðŸ
 Open this repository folder in Visual Studio Code (make sure to keep the `.vscode` folder for
 settings consistency, running on Jupyter might require some tweaks to code and imports).
 
-Open the first `00_Intro.ipynb` notebook in Visual Studio Code, and follow along! From there, just
-keep moving on to the next notebooks. If you get stuck, feel free to check the `/solution` folder.
+Open the first `00_Intro.ipynb` notebook in Visual Studio Code, and follow along! Your objective
+is to write code in the `TODO` sections and try out the algorithms! You might even encounter some
+unit tests to verify your implementation along the way! Keep moving from one notebook to the next,
+and if you get stuck feel free to check the `/solution` folder where the full code is available.
 
 For an expanded treatment and step-by-step coding, stay tuned for the upcoming YouTube videos!
