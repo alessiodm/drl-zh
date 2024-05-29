@@ -31,6 +31,7 @@ def init_random(env: gym.Env=None, seed=DEFAULT_RANDOM_SEED):
     torch.use_deterministic_algorithms(True)
     if env is not None:
         env.np_random, _ = seeding.np_random(seed)
+        env.reset(seed=seed)
     return env
 
 def epsilon_gen(eps_start=1.0, eps_decay=0.99999, eps_min=0.05):
