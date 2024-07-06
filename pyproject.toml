@@ -1,6 +1,7 @@
 [tool.poetry]
 name = "drl-zh"
 version = "0.1.0"
+package-mode = false
 description = "Deep Reinforcement Learning: Zero to Hero!"
 authors = ["Alessio <alessio.dellamotta@gmail.com>"]
 license = "MIT"
@@ -16,7 +17,9 @@ notebook = "^7.0.6"
 moviepy = "^1.0.3"
 torch = "^2.2.0"
 pandas = "^2.2.0"
-
+# Adding the Poetry dependency to work within a virtual environment, and avoiding Poetry to
+# uninstall itself when syncing deps with `install --sync`...
+poetry = "^1.8.3"
 
 [build-system]
 requires = ["poetry-core"]
