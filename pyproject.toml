@@ -8,7 +8,7 @@ license = "MIT"
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.11"
+requires-python = ">=3.11,<3.12"
 gymnasium = {extras = ["accept-rom-license", "atari", "box2d", "other"], version = "^0.29.1"}
 pygame = "^2.5.2"
 matplotlib = "^3.8.2"
