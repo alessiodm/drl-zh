@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deep Reinforcement Learning: Zero to Hero!</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="dark-mode"> <div class="theme-switch-wrapper">
+        <label class="theme-switch" for="checkbox">
+            <input type="checkbox" id="checkbox" />
+            <div class="slider round"></div>
+        </label>
+    </div>
+
+    <header class="hero">
+        <div class="bg-blob blob1"></div>
+        <div class="bg-blob blob2"></div>
+        <div class="bg-blob blob3"></div>
+        
+        <div class="hero-content">
+            <h1 class="hidden">Deep Reinforcement Learning: Zero to Hero! 🚀</h1>
+            <p class="hidden">A hands-on course designed to take you from the fundamentals to the cutting edge of Deep Reinforcement Learning.</p>
+            <a href="https://github.com/alessiodm/drl-zh" class="cta-button hidden">View on GitHub</a>
+        </div>
+        <div class="hero-robot hidden">
+            <svg width="250" height="250" viewBox="0 0 250 250">
+                <g class="robot-body">
+                    <rect x="75" y="50" width="100" height="70" rx="15" class="robot-head" stroke-width="4"/>
+                    <circle cx="125" cy="85" r="18" fill="var(--primary-color-dark)"/>
+                    <circle cx="130" cy="80" r="5" fill="#ffffff" opacity="0.8"/>
+                    <line x1="125" y1="50" x2="125" y2="20" class="robot-antenna" stroke-width="4"/>
+                    <circle class="antenna-light" cx="125" cy="15" r="6" fill="var(--accent-color)"/>
+                    <rect x="85" y="115" width="80" height="80" rx="10" fill="var(--primary-color)"/>
+                    <g class="robot-arm-left">
+                        <rect x="60" y="125" width="25" height="15" rx="5" fill="var(--primary-color-dark)"/>
+                        <rect x="50" y="140" width="20" height="50" rx="5" fill="var(--primary-color-dark)"/>
+                    </g>
+                    <g class="robot-arm-right">
+                        <rect x="165" y="125" width="25" height="15" rx="5" fill="var(--primary-color-dark)"/>
+                        <rect x="180" y="140" width="20" height="50" rx="5" fill="var(--primary-color-dark)"/>
+                    </g>
+                    <rect x="75" y="195" width="100" height="20" rx="5" class="robot-treads"/>
+                </g>
+            </svg>
+        </div>
+    </header>
+
+    <main>
+        <section id="welcome" class="content-section hidden">
+            <h2>Welcome to the Adventure!</h2>
+            <p>
+                Deep Reinforcement Learning can feel less accessible than other areas of AI, but it's also one of the most intriguing. It tackles a fundamental question: <strong>how can an agent learn to make optimal decisions by interacting with an environment?</strong> Instead of being fed answers, the agent learns through trial and error, guided only by a sparse reward signal—much like how humans learn. This course will empower you to build these intelligent agents, from playing Atari games to landing on the Moon and fine-tuning modern Language Models.
+            </p>
+        </section>
+
+        <section id="video-intro" class="content-section hidden">
+            <h2>Quick Video Introduction</h2>
+            <p>Watch this short video to get a feel for the course and what you'll build.</p>
+            <div class="video-container">
+                <iframe 
+                    src="https://www.youtube.com/embed/kdmickVUd3c" 
+                    title="Deep Reinforcement Learning: Zero to Hero! Introduction" 
+                    width="560" 
+                    height="315" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </section>
+
+        <section id="chapters" class="content-section hidden">
+            <h2>Course Content</h2>
+            <p>You'll progress through a series of hands-on notebooks, implementing each algorithm from scratch.</p>
+            <div class="chapters-grid">
+                <div class="chapter-card"><strong>0. Introduction:</strong> An overview of the course and RL's core concepts.</div>
+                <div class="chapter-card"><strong>1. Markov Decision Processes:</strong> The mathematical framework for decision-making.</div>
+                <div class="chapter-card"><strong>2. RL Foundations:</strong> Exploring agents, environments, states, actions, and rewards.</div>
+                <div class="chapter-card"><strong>3. Deep Q Learning:</strong> The value-based classic that mastered Atari games.</div>
+                <div class="chapter-card"><strong>4. Policy Gradient:</strong> Methods that directly optimize an agent's policy.</div>
+                <div class="chapter-card"><strong>5. Actor Critic Methods:</strong> A hybrid approach for more stable learning.</div>
+                <div class="chapter-card"><strong>6. Proximal Policy Optimization:</strong> An advanced and popular policy gradient algorithm.</div>
+                <div class="chapter-card"><strong>7. Bridge to Advanced Topics:</strong> Transitioning to more specialized areas of RL.</div>
+                <div class="chapter-card"><strong>8. Exploration and Curiosity:</strong> Designing agents that explore effectively.</div>
+                <div class="chapter-card"><strong>9. Multi-Agent RL:</strong> Scenarios where multiple agents interact and learn.</div>
+                <div class="chapter-card"><strong>10. Imitation Learning:</strong> Training agents by mimicking expert behavior.</div>
+                <div class="chapter-card"><strong>11. MCTS & AlphaZero:</strong> The powerful search algorithms behind game-playing champions.</div>
+                <div class="chapter-card"><strong>12. Productionizing RL:</strong> Best practices for deploying RL systems.</div>
+                <div class="chapter-card"><strong>13. Model Based RL:</strong> Agents that learn a model of the world to plan ahead.</div>
+                <div class="chapter-card"><strong>14. RLHF:</strong> The technique used to align and fine-tune modern LLMs.</div>
+                <div class="chapter-card"><strong>15. Conclusion:</strong> A final summary and a look at the future of RL.</div>
+            </div>
+        </section>
+
+        <section id="prerequisites" class="content-section hidden">
+            <h2>Prerequisites</h2>
+            <p>To make the most out of this course, you should be familiar with the following:</p>
+            <div class="prerequisites-list">
+                <div class="prereq-item"><h3>🐍 Proficiency in Python</h3><p>Comfort with classes, data structures, and general control flow.</p></div>
+                <div class="prereq-item"><h3>🧠 Deep Learning & PyTorch</h3><p>Understanding of neural networks, gradient descent, and PyTorch basics.</p></div>
+                <div class="prereq-item"><h3>🧮 Mathematical Foundations</h3><p>A solid understanding of basic calculus, linear algebra, and probability is recommended for theory.</p></div>
+            </div>
+        </section>
+ 
+        <section id="about" class="content-section hidden">
+        <h2>About the Course</h2>
+        <p>
+            <i>"I collected lots of separate pieces of code I wrote during the years, and attempted to assemble them in a coherent and unified educational resource." - Alessio</i>
+        </p>
+    </section>
+    </main>
+
+    <footer class="final-section hidden">
+        <h2>Ready to Begin?</h2>
+        <p>The easiest way to get started is with the provided Dockerized environment. Clone the repository and dive in!</p>
+        <a href="https://github.com/alessiodm/drl-zh" class="cta-button">Let's Go!</a>
+        <div class="footer-links">
+            <p>Released under the MIT License.</p>
+            <p>&copy; 2025 | Built by your friendly AI.</p>
+        </div>
+    </footer>
+
+    <script>
+        // --- Scroll Animation ---
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) entry.target.classList.add('show');
+            });
+        });
+        document.querySelectorAll('.hidden').forEach((el) => observer.observe(el));
+
+        // --- Theme Toggle Logic ---
+        const themeToggle = document.getElementById('checkbox');
+        const currentTheme = localStorage.getItem('theme');
+
+        // Apply saved theme on load
+        if (currentTheme) {
+            document.body.classList.toggle('dark-mode', currentTheme === 'dark');
+            themeToggle.checked = currentTheme === 'dark';
+        } else {
+            // Default to dark mode if no theme is saved
+            document.body.classList.add('dark-mode');
+            themeToggle.checked = true;
+        }
+
+        // Handle toggle change
+        themeToggle.addEventListener('change', function() {
+            const isDarkMode = this.checked;
+            document.body.classList.toggle('dark-mode', isDarkMode);
+            localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+        });
+    </script>
+
+</body>
+</html>
