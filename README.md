@@ -4,7 +4,7 @@
 [![Python 3.12](https://img.shields.io/badge/python-3.12-blue.svg)](https://www.python.org/downloads/release/python-3120/)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 
-Welcome to the most hands-on reinforcement learning experience!
+Welcome to [drlzh.ai](https://drlzh.ai): the most hands-on reinforcement learning experience!
 
 This course is a deep dive into the **vast and evolving world of Deep Reinforcement Learning**,
 split into two parts. First, you'll learn the foundations of reinforcement learning and master the
