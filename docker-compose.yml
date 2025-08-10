@@ -1,0 +1,38 @@
+services:
+  drlzh-dev-env:
+    # Build configuration for the CPU environment.
+    build:
+      context: .
+      dockerfile: Dockerfile
+      # Pass UID and GID from the .env file as build arguments.
+      args:
+        UID: ${UID}
+        GID: ${GID}
+    
+    container_name: drlzh-dev-env
+
+    # Volumes for data persistence and code mounting.
+    volumes:
+      - .:/home/coder/project:cached
+      - vscode-data:/home/coder/.local/share/code-server
+      # Mount a named volume to persist the poetry cache at runtime.
+      - poetry-cache:/home/coder/.cache/pypoetry
+
+    # Port mappings from host to container.
+    ports:
+      - "8080:8080"
+      - "8888:8888"
+
+    # Set environment variables inside the container.
+    environment:
+      - PUID=${UID}
+      - PGID=${GID}
+
+    # Ensure the container has enough shared memory.
+    shm_size: '2gb'
+    restart: unless-stopped
+
+# Define the named volumes for persisting data.
+volumes:
+  vscode-data:
+  poetry-cache:

@@ -1,5 +1,18 @@
 {
   "editor.tabSize": 4,
+  "editor.rulers": [100],
+  "editor.formatOnSave": true,
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter"
+  },
+  "notebook.formatOnSave.enabled": true,
+  "black-formatter.args": ["--line-length", "100"],
+  "prettier.printWidth": 100,
+  "prettier.proseWrap": "always",
   // Make sure the Python imports work also in the 'solution' folder.
-  "jupyter.notebookFileRoot": "${workspaceFolder}"
+  "jupyter.notebookFileRoot": "${workspaceFolder}",
+  "workbench.editorLargeFileConfirmation": 30
 }

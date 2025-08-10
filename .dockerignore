@@ -1,0 +1,29 @@
+# Git specific
+.git
+.gitignore
+
+# Python specific
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+.pytest_cache/
+.coverage
+.ipynb_checkpoints/
+
+# Local environment
+.env
+.venv/
+env/
+venv/
+
+# Docker specific
+Dockerfile.cpu
+Dockerfile.gpu
+docker-compose.yml
+docker-compose.gpu.yml
+
+# DRLZH
+runs/
+checkpoints/

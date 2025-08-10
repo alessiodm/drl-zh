@@ -1,25 +1,52 @@
 [tool.poetry]
 name = "drl-zh"
-version = "0.1.0"
+version = "1.0.0"
 package-mode = false
 description = "Deep Reinforcement Learning: Zero to Hero!"
-authors = ["Alessio <alessio.dellamotta@gmail.com>"]
+authors = ["Alessio Della Motta <alessio.dellamotta@gmail.com>"]
 license = "MIT"
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.11"
-gymnasium = {extras = ["accept-rom-license", "atari", "box2d", "other"], version = "^0.29.1"}
+python = ">=3.12,<3.13"
+gymnasium = { extras = [
+    "accept-rom-license",
+    "atari",
+    "ale-py",
+    "box2d",
+    "mujoco",
+    "other",
+], version = "^1.1.1" }
+ale-py = "^0.9.1"
 pygame = "^2.5.2"
 matplotlib = "^3.8.2"
-ipykernel = "^6.28.0"
-notebook = "^7.0.6"
-moviepy = "^1.0.3"
-torch = "^2.2.0"
+ipykernel = "^6.29.5"
+ipywidgets = "^8.1.5"
+notebook = "^7.4.3"
+moviepy = "^2.2.1"
+mujoco = "^3.3.3"
+torch = "^2.7.1"
+torchrl = "^0.5.0"
 pandas = "^2.2.0"
+peft = "^0.14.0"
+minigrid = "^3.0.0"
+pettingzoo = "^1.25.0"
+pymunk = "^6.10.0"
+supersuit = "^3.10.0"
+transformers = "^4.48.0"
 # Adding the Poetry dependency to work within a virtual environment, and avoiding Poetry to
 # uninstall itself when syncing deps with `install --sync`...
-poetry = "^1.8.3"
+poetry = "^2.1.3"
+seaborn = "^0.13.2"
+ray = {extras = ["default"], version = "^2.48.0"}
+optuna = "^4.4.0"
+plotly = "^6.2.0"
+kaleido = "^1.0.0"
+tensorboard = "^2.20.0"
+scikit-learn = "^1.7.1"
+
+[tool.black]
+line-length = 100
 
 [build-system]
 requires = ["poetry-core"]
