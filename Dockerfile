@@ -7,7 +7,8 @@ ARG CODE_SERVER_VERSION=4.102.3
 
 # Prevent apt-get from asking questions.
 ENV DEBIAN_FRONTEND=noninteractive
-
+RUN sed -i 's@//.*archive.ubuntu.com@//mirrors.aliyun.com@g' /etc/apt/sources.list && \
+    sed -i 's@//.*security.ubuntu.com@//mirrors.aliyun.com@g' /etc/apt/sources.list
 # PyOpenGL needs these to find and use the EGL backend provided by the NVIDIA driver.
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
@@ -18,7 +19,9 @@ RUN apt-get update && \
     xz-utils \
     git \
     libgl1 \
-    libegl1 && \
+    libegl1 \
+    libglib2.0-0 \
+    libglib2.0-dev && \
     rm -rf /var/lib/apt/lists/*
 
 # Download and install Miniconda.
@@ -70,7 +73,10 @@ ENV NVIDIA_VISIBLE_DEVICES=all
 ENV NVIDIA_DRIVER_CAPABILITIES=graphics,utility,compute
 
 # Install code-server.
-RUN curl -fL "https://github.com/coder/code-server/releases/download/v${CODE_SERVER_VERSION}/code-server-${CODE_SERVER_VERSION}-linux-amd64.tar.gz" \
+# RUN curl -fL "https://github.com/coder/code-server/releases/download/v${CODE_SERVER_VERSION}/code-server-${CODE_SERVER_VERSION}-linux-amd64.tar.gz" \
+#     | tar -C /usr/local/lib -xz && \
+#     ln -s "/usr/local/lib/code-server-${CODE_SERVER_VERSION}-linux-amd64/bin/code-server" /usr/local/bin/code-server
+RUN curl -fL "https://pd.zwc365.com/seturl/https://github.com/coder/code-server/releases/download/v${CODE_SERVER_VERSION}/code-server-${CODE_SERVER_VERSION}-linux-amd64.tar.gz" \
     | tar -C /usr/local/lib -xz && \
     ln -s "/usr/local/lib/code-server-${CODE_SERVER_VERSION}-linux-amd64/bin/code-server" /usr/local/bin/code-server
 
