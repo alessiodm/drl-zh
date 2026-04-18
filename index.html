@@ -2,158 +2,420 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Deep Reinforcement Learning: Zero to Hero!</title>
-    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Deep Reinforcement Learning: Zero to Hero</title>
+    <meta name="description" content="The most hands-on reinforcement learning course on the internet. 18 notebooks, from MDPs to Dreamer to GRPO — with a voice-capable AI tutor watching over your shoulder.">
+    <meta property="og:title" content="Deep Reinforcement Learning: Zero to Hero">
+    <meta property="og:description" content="Line by line. By you. From MDPs to AlphaZero and GRPO. 18 hands-on notebooks plus a voice-capable AI Companion.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
-<body class="dark-mode"> <div class="theme-switch-wrapper">
-        <label class="theme-switch" for="checkbox">
-            <input type="checkbox" id="checkbox" />
-            <div class="slider round"></div>
-        </label>
+<body>
+
+<nav class="nav">
+    <div class="nav-inner">
+        <a class="nav-logo" href="#top">
+            <span class="logo-dot"></span>
+            <span>drlzh</span>
+        </a>
+        <div class="nav-links">
+            <a href="#curriculum">Curriculum</a>
+            <a href="#companion">Companion</a>
+            <a href="#quickstart">Quickstart</a>
+            <a href="https://github.com/alessiodm/drl-zh" class="nav-cta">GitHub ↗</a>
+        </div>
+    </div>
+</nav>
+
+<header class="hero" id="top">
+    <canvas class="hero-canvas" id="heroCanvas"></canvas>
+    <div class="hero-vignette"></div>
+    <div class="hero-grain"></div>
+
+    <div class="hero-content">
+        <div class="hero-kicker"><span class="kicker-dot"></span> Deep Reinforcement Learning · Zero to Hero</div>
+        <h1 class="hero-title">
+            Line by line.<br>
+            By you.<br>
+            <span class="hero-accent">From MDPs to AlphaZero and GRPO.</span>
+        </h1>
+        <p class="hero-sub">
+            The most hands&#8209;on reinforcement learning course on the internet. 18 guided notebooks, every algorithm built from scratch, with a voice&#8209;capable AI tutor watching over your shoulder.
+        </p>
+        <div class="hero-ctas">
+            <a href="https://github.com/alessiodm/drl-zh" class="btn btn-primary">Start the Notebooks <span class="arrow">→</span></a>
+            <a href="#companion" class="btn btn-secondary">Meet the Companion</a>
+        </div>
+        <div class="hero-meta">
+            <span><strong>18</strong> notebooks</span>
+            <span class="sep">·</span>
+            <span><strong>MIT</strong> licensed</span>
+            <span class="sep">·</span>
+            <span><strong>Docker</strong>-ready</span>
+        </div>
     </div>
 
-    <header class="hero">
-        <div class="bg-blob blob1"></div>
-        <div class="bg-blob blob2"></div>
-        <div class="bg-blob blob3"></div>
-        
-        <div class="hero-content">
-            <h1 class="hidden">Deep Reinforcement Learning: Zero to Hero! 🚀</h1>
-            <p class="hidden">A hands-on course designed to take you from the fundamentals to the cutting edge of Deep Reinforcement Learning.</p>
-            <a href="https://github.com/alessiodm/drl-zh" class="cta-button hidden">View on GitHub</a>
-        </div>
-        <div class="hero-robot hidden">
-            <svg width="250" height="250" viewBox="0 0 250 250">
-                <g class="robot-body">
-                    <rect x="75" y="50" width="100" height="70" rx="15" class="robot-head" stroke-width="4"/>
-                    <circle cx="125" cy="85" r="18" fill="var(--primary-color-dark)"/>
-                    <circle cx="130" cy="80" r="5" fill="#ffffff" opacity="0.8"/>
-                    <line x1="125" y1="50" x2="125" y2="20" class="robot-antenna" stroke-width="4"/>
-                    <circle class="antenna-light" cx="125" cy="15" r="6" fill="var(--accent-color)"/>
-                    <rect x="85" y="115" width="80" height="80" rx="10" fill="var(--primary-color)"/>
-                    <g class="robot-arm-left">
-                        <rect x="60" y="125" width="25" height="15" rx="5" fill="var(--primary-color-dark)"/>
-                        <rect x="50" y="140" width="20" height="50" rx="5" fill="var(--primary-color-dark)"/>
-                    </g>
-                    <g class="robot-arm-right">
-                        <rect x="165" y="125" width="25" height="15" rx="5" fill="var(--primary-color-dark)"/>
-                        <rect x="180" y="140" width="20" height="50" rx="5" fill="var(--primary-color-dark)"/>
-                    </g>
-                    <rect x="75" y="195" width="100" height="20" rx="5" class="robot-treads"/>
-                </g>
-            </svg>
-        </div>
-    </header>
+    <div class="hero-scroll">
+        <span>Scroll</span>
+        <div class="scroll-line"></div>
+    </div>
 
-    <main>
-        <section id="welcome" class="content-section hidden">
-            <h2>Welcome to the Adventure!</h2>
-            <p>
-                Deep Reinforcement Learning can feel less accessible than other areas of AI, but it's also one of the most intriguing. It tackles a fundamental question: <strong>how can an agent learn to make optimal decisions by interacting with an environment?</strong> Instead of being fed answers, the agent learns through trial and error, guided only by a sparse reward signal—much like how humans learn. This course will empower you to build these intelligent agents, from playing Atari games to landing on the Moon and fine-tuning modern Language Models.
-            </p>
-        </section>
+    <div class="hero-morph-label" id="morphLabel">robot</div>
+</header>
 
-        <section id="video-intro" class="content-section hidden">
-            <h2>Quick Video Introduction</h2>
-            <p>Watch this short video to get a feel for the course and what you'll build.</p>
-            <div class="video-container">
-                <iframe 
-                    src="https://www.youtube.com/embed/kdmickVUd3c" 
-                    title="Deep Reinforcement Learning: Zero to Hero! Introduction" 
-                    width="560" 
-                    height="315" 
-                    frameborder="0" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                    allowfullscreen>
-                </iframe>
-            </div>
-        </section>
-
-        <section id="chapters" class="content-section hidden">
-            <h2>Course Content</h2>
-            <p>You'll progress through a series of hands-on notebooks, implementing each algorithm from scratch.</p>
-            <div class="chapters-grid">
-                <div class="chapter-card"><strong>0. Introduction:</strong> An overview of the course and RL's core concepts.</div>
-                <div class="chapter-card"><strong>1. Markov Decision Processes:</strong> The mathematical framework for decision-making.</div>
-                <div class="chapter-card"><strong>2. RL Foundations:</strong> Exploring agents, environments, states, actions, and rewards.</div>
-                <div class="chapter-card"><strong>3. Deep Q Learning:</strong> The value-based classic that mastered Atari games.</div>
-                <div class="chapter-card"><strong>4. Policy Gradient:</strong> Methods that directly optimize an agent's policy.</div>
-                <div class="chapter-card"><strong>5. Actor Critic Methods:</strong> A hybrid approach for more stable learning.</div>
-                <div class="chapter-card"><strong>6. Proximal Policy Optimization:</strong> An advanced and popular policy gradient algorithm.</div>
-                <div class="chapter-card"><strong>7. Bridge to Advanced Topics:</strong> Transitioning to more specialized areas of RL.</div>
-                <div class="chapter-card"><strong>8. Exploration and Curiosity:</strong> Designing agents that explore effectively.</div>
-                <div class="chapter-card"><strong>9. Multi-Agent RL:</strong> Scenarios where multiple agents interact and learn.</div>
-                <div class="chapter-card"><strong>10. Imitation Learning:</strong> Training agents by mimicking expert behavior.</div>
-                <div class="chapter-card"><strong>11. MCTS & AlphaZero:</strong> The powerful search algorithms behind game-playing champions.</div>
-                <div class="chapter-card"><strong>12. Productionizing RL:</strong> Best practices for deploying RL systems.</div>
-                <div class="chapter-card"><strong>13. Model Based RL:</strong> Agents that learn a model of the world to plan ahead.</div>
-                <div class="chapter-card"><strong>14. RLHF:</strong> The technique used to align and fine-tune modern LLMs.</div>
-                <div class="chapter-card"><strong>15. Conclusion:</strong> A final summary and a look at the future of RL.</div>
-            </div>
-        </section>
-
-        <section id="prerequisites" class="content-section hidden">
-            <h2>Prerequisites</h2>
-            <p>To make the most out of this course, you should be familiar with the following:</p>
-            <div class="prerequisites-list">
-                <div class="prereq-item"><h3>🐍 Proficiency in Python</h3><p>Comfort with classes, data structures, and general control flow.</p></div>
-                <div class="prereq-item"><h3>🧠 Deep Learning & PyTorch</h3><p>Understanding of neural networks, gradient descent, and PyTorch basics.</p></div>
-                <div class="prereq-item"><h3>🧮 Mathematical Foundations</h3><p>A solid understanding of basic calculus, linear algebra, and probability is recommended for theory.</p></div>
-            </div>
-        </section>
- 
-        <section id="about" class="content-section hidden">
-        <h2>About the Course</h2>
-        <p>
-            <i>"I collected lots of separate pieces of code I wrote during the years, and attempted to assemble them in a coherent and unified educational resource." - Alessio</i>
+<section class="section section-pitch">
+    <div class="container narrow">
+        <p class="pitch-lead">
+            RL tackles one question: <em>how can an agent learn to make optimal decisions by interacting with an environment?</em> No one feeds it answers. It learns by trying, failing, and being nudged by a sparse reward — much like we do.
         </p>
-    </section>
-    </main>
+        <p class="pitch-lead dim">
+            This course is the full pipeline: you'll implement <strong>DQN</strong>, <strong>SAC</strong>, <strong>PPO</strong>, <strong>AlphaZero</strong>, <strong>Dreamer</strong>, and <strong>GRPO</strong> from scratch. You'll play Atari, land on the Moon, train robots, and align LLMs — by filling in <code>#&nbsp;TODO</code> blocks, with a <code>solution/</code> folder (or the Companion) one click away.
+        </p>
+    </div>
+</section>
 
-    <footer class="final-section hidden">
-        <h2>Ready to Begin?</h2>
-        <p>The easiest way to get started is with the provided Dockerized environment. Clone the repository and dive in!</p>
-        <a href="https://github.com/alessiodm/drl-zh" class="cta-button">Let's Go!</a>
-        <div class="footer-links">
-            <p>Released under the MIT License.</p>
-            <p>&copy; 2025 | Built by your friendly AI.</p>
+<section class="section section-live" id="live">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-eyebrow"><span class="live-dot"></span> Live · training now</div>
+            <h2>An agent, learning in front of you.</h2>
+            <p class="section-lede">A tabular Q-learning agent in a tiny gridworld. No video, no slideshow — it is <em>actually training</em> in your browser right now. This is the pattern you'll build, formalize, and scale across 18 notebooks.</p>
         </div>
-    </footer>
 
-    <script>
-        // --- Scroll Animation ---
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) entry.target.classList.add('show');
-            });
-        });
-        document.querySelectorAll('.hidden').forEach((el) => observer.observe(el));
+        <div class="gridworld-wrap">
+            <div class="gridworld-stage">
+                <canvas id="gridworld" width="440" height="440"></canvas>
+                <div class="gridworld-legend">
+                    <span><i class="sw agent"></i> agent</span>
+                    <span><i class="sw goal"></i> goal</span>
+                    <span><i class="sw wall"></i> wall</span>
+                    <span><i class="sw q"></i> Q-value</span>
+                </div>
+            </div>
+            <div class="gridworld-panel">
+                <div class="stat-row">
+                    <div class="stat"><span class="stat-label">Episode</span><span class="stat-value" id="gwEpisode">0</span></div>
+                    <div class="stat"><span class="stat-label">Steps</span><span class="stat-value" id="gwSteps">0</span></div>
+                </div>
+                <div class="stat-row">
+                    <div class="stat"><span class="stat-label">ε (exploration)</span><span class="stat-value" id="gwEpsilon">1.00</span></div>
+                    <div class="stat"><span class="stat-label">Avg reward (100 ep)</span><span class="stat-value" id="gwReward">—</span></div>
+                </div>
+                <div class="reward-box">
+                    <div class="reward-label">Reward curve</div>
+                    <canvas id="rewardCurve" width="360" height="90"></canvas>
+                </div>
+                <div class="gw-controls">
+                    <button class="btn btn-ghost btn-sm" id="gwReset">↺ Reset</button>
+                    <button class="btn btn-ghost btn-sm" id="gwSpeed">Speed ×1</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
-        // --- Theme Toggle Logic ---
-        const themeToggle = document.getElementById('checkbox');
-        const currentTheme = localStorage.getItem('theme');
+<section class="section section-companion" id="companion">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-eyebrow">New · AI Companion</div>
+            <h2>A tutor that <span class="cyan">actually watches you code.</span></h2>
+            <p class="section-lede">The DRL&#8209;ZH Companion is a VS Code extension. It sees which TODO your cursor is on, notices when you're stuck, and nudges with Socratic hints — never spoilers. Prefer to talk? Flip on voice mode and have a conversation.</p>
+        </div>
 
-        // Apply saved theme on load
-        if (currentTheme) {
-            document.body.classList.toggle('dark-mode', currentTheme === 'dark');
-            themeToggle.checked = currentTheme === 'dark';
-        } else {
-            // Default to dark mode if no theme is saved
-            document.body.classList.add('dark-mode');
-            themeToggle.checked = true;
-        }
+        <div class="companion-sim" id="companionSim">
+            <div class="vsc-chrome">
+                <div class="vsc-traffic"><span></span><span></span><span></span></div>
+                <div class="vsc-tabs">
+                    <div class="vsc-tab active">03_DQN.ipynb</div>
+                    <div class="vsc-tab muted">04_PG.ipynb</div>
+                    <div class="vsc-tab muted">05_AC.ipynb</div>
+                </div>
+                <div class="vsc-spacer"></div>
+                <div class="vsc-chrome-label">drl-zh · VS Code</div>
+            </div>
+            <div class="vsc-body">
+                <div class="vsc-sidebar">
+                    <div class="vsc-icon active" title="DRL Companion">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="7" width="14" height="12" rx="2"/><circle cx="9.5" cy="12.5" r="1.2" fill="currentColor"/><circle cx="14.5" cy="12.5" r="1.2" fill="currentColor"/><path d="M12 7V3"/><circle cx="12" cy="2.5" r="1"/></svg>
+                    </div>
+                    <div class="vsc-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h7l2 2h9v11H3z"/></svg></div>
+                    <div class="vsc-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.5-4.5"/></svg></div>
+                    <div class="vsc-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 4v2M12 18v2M4 12h2M18 12h2M7 7l1.5 1.5M15.5 15.5L17 17M7 17l1.5-1.5M15.5 8.5L17 7"/></svg></div>
+                </div>
 
-        // Handle toggle change
-        themeToggle.addEventListener('change', function() {
-            const isDarkMode = this.checked;
-            document.body.classList.toggle('dark-mode', isDarkMode);
-            localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
-        });
-    </script>
+                <div class="vsc-editor">
+                    <div class="vsc-cell">
+                        <div class="cell-head"><span class="cell-tag">In [3]:</span></div>
+                        <div class="cell-code">
+<pre><code><span class="c-kw">class</span> <span class="c-cls">DQN</span>(nn.Module):
+    <span class="c-kw">def</span> <span class="c-fn">__init__</span>(self, obs_dim, n_actions):
+        super().__init__()
+        <span class="c-cm"># TODO: build a 2-layer MLP that maps obs → Q-values.</span>
+        <span class="c-cm"># Hint: nn.Sequential with Linear and ReLU layers.</span>
+        self.net = <span class="c-none">None</span><span class="sim-cursor" id="simCursor"></span>
 
+    <span class="c-kw">def</span> <span class="c-fn">forward</span>(self, obs):
+        <span class="c-kw">return</span> self.net(obs)</code></pre>
+                        </div>
+                    </div>
+                    <div class="vsc-cell muted">
+                        <div class="cell-head"><span class="cell-tag">In [4]:</span></div>
+                        <div class="cell-code">
+<pre><code><span class="c-cm"># Replay buffer: uniform sampling of past transitions.</span>
+buffer = ReplayBuffer(capacity=<span class="c-num">100_000</span>)</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="vsc-companion">
+                    <div class="comp-head">
+                        <div class="comp-title">
+                            <span class="comp-robot">
+                                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="7" width="14" height="12" rx="2"/><circle cx="9.5" cy="12.5" r="1.2" fill="currentColor"/><circle cx="14.5" cy="12.5" r="1.2" fill="currentColor"/><path d="M12 7V3"/><circle cx="12" cy="2.5" r="1"/></svg>
+                            </span>
+                            DRL Companion
+                        </div>
+                        <div class="comp-signals">
+                            <span class="signal" data-sig="idle">idle</span>
+                            <span class="signal" data-sig="reading">reading</span>
+                            <span class="signal" data-sig="stuck">stuck</span>
+                            <span class="signal" data-sig="drift">drift</span>
+                            <span class="signal" data-sig="flow">flow</span>
+                        </div>
+                    </div>
+                    <div class="comp-messages" id="compMessages">
+                        <div class="msg msg-sys">watching <code>03_DQN.ipynb</code> · awareness: attentive</div>
+                    </div>
+                    <div class="comp-voice">
+                        <button class="voice-toggle" id="voiceToggle" type="button">
+                            <span class="voice-dot"></span>
+                            <span class="voice-label">Voice mode: off</span>
+                        </button>
+                        <canvas class="waveform" id="waveform" width="220" height="36"></canvas>
+                    </div>
+                    <div class="comp-input">
+                        <input type="text" disabled placeholder="Ask the Companion…">
+                        <button class="btn btn-primary btn-sm" id="simPlay" type="button"><span class="sim-play-icon">▶</span> <span id="simPlayLabel">Play demo</span></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="companion-features">
+            <div class="feat">
+                <div class="feat-icon">
+                    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z"/></svg>
+                </div>
+                <h3>Awareness signals</h3>
+                <p>Detects <code>idle</code>, <code>stuck</code>, <code>reading</code>, <code>confusion</code>, <code>drift</code>, <code>flow</code> — and tunes when to speak up.</p>
+            </div>
+            <div class="feat">
+                <div class="feat-icon">
+                    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="9" y="3" width="6" height="12" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg>
+                </div>
+                <h3>Voice mode</h3>
+                <p>Whisper STT + local neural TTS (Kokoro). Talk it out; it talks back. No audio leaves your machine with Kokoro.</p>
+            </div>
+            <div class="feat">
+                <div class="feat-icon">
+                    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="8" cy="15" r="4"/><path d="M11 12l9-9M17 6l3 3M14 9l3 3"/></svg>
+                </div>
+                <h3>Bring your own LLM</h3>
+                <p>Groq, Gemini, OpenAI, or Anthropic. Your keys, your bill. Free tiers cover most of the course.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section section-curriculum" id="curriculum">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-eyebrow">Curriculum</div>
+            <h2>18 notebooks. <span class="amber">Four acts.</span> Zero to hero.</h2>
+            <p class="section-lede">Every chapter is a notebook with <code>#&nbsp;TODO</code> blocks you fill in, and a mirrored <code>solution/</code> for when you're stuck. Progress is linear, but branches are welcome.</p>
+        </div>
+
+        <div class="act">
+            <div class="act-header">
+                <div class="act-meta">
+                    <span class="act-label">Act I</span>
+                    <span class="act-count">3 notebooks</span>
+                </div>
+                <h3>Foundations</h3>
+                <p>The vocabulary of RL. Agent, environment, reward, policy, value.</p>
+            </div>
+            <div class="chapters-grid">
+                <article class="chapter-card"><div class="ch-num">00</div><h4>Introduction</h4><p>Why RL. How this course works. How to use the Companion.</p></article>
+                <article class="chapter-card"><div class="ch-num">01</div><h4>Markov Decision Processes</h4><p>The math behind decisions. Bellman, policies, value iteration.</p></article>
+                <article class="chapter-card"><div class="ch-num">02</div><h4>RL Foundations</h4><p>Agents, environments, states, actions, rewards — and Gym.</p></article>
+            </div>
+        </div>
+
+        <div class="act">
+            <div class="act-header">
+                <div class="act-meta">
+                    <span class="act-label">Act II</span>
+                    <span class="act-count">4 notebooks</span>
+                </div>
+                <h3>Deep RL Core</h3>
+                <p>The classics, from scratch. Value&#8209;based, policy&#8209;based, actor&#8209;critic.</p>
+            </div>
+            <div class="chapters-grid">
+                <article class="chapter-card"><div class="ch-num">03</div><h4>Deep Q-Learning</h4><p>The value-based classic that cracked Atari. Experience replay, target nets.</p></article>
+                <article class="chapter-card"><div class="ch-num">04</div><h4>Policy Gradient</h4><p>REINFORCE and descendants. Directly optimize behavior.</p></article>
+                <article class="chapter-card"><div class="ch-num">05</div><h4>Actor-Critic &amp; SAC</h4><p>Combine value and policy. Soft Actor-Critic, maximum-entropy RL.</p></article>
+                <article class="chapter-card"><div class="ch-num">06</div><h4>PPO</h4><p>The workhorse of modern RL. Clip, advantage, stability.</p></article>
+            </div>
+        </div>
+
+        <div class="act">
+            <div class="act-header">
+                <div class="act-meta">
+                    <span class="act-label">Act III</span>
+                    <span class="act-count">5 notebooks</span>
+                </div>
+                <h3>Advanced</h3>
+                <p>Beyond single&#8209;agent, single&#8209;task. Where RL gets interesting.</p>
+            </div>
+            <div class="chapters-grid">
+                <article class="chapter-card"><div class="ch-num">07</div><h4>Bridge to Advanced</h4><p>A map of the frontier. Where each branch leads and why.</p></article>
+                <article class="chapter-card"><div class="ch-num">08</div><h4>Exploration &amp; Curiosity</h4><p>Sparse rewards, intrinsic motivation, RND, ICM.</p></article>
+                <article class="chapter-card"><div class="ch-num">09</div><h4>Multi-Agent RL</h4><p>Cooperation, competition, CTDE, self-play.</p></article>
+                <article class="chapter-card"><div class="ch-num">10</div><h4>Offline &amp; Imitation</h4><p>Learning from logs. From demonstrations. BC, CQL.</p></article>
+                <article class="chapter-card"><div class="ch-num">11</div><h4>MCTS &amp; AlphaZero</h4><p>Tree search meets deep nets. Self-play champions.</p></article>
+            </div>
+        </div>
+
+        <div class="act">
+            <div class="act-header">
+                <div class="act-meta">
+                    <span class="act-label">Act IV</span>
+                    <span class="act-count">7 notebooks</span>
+                </div>
+                <h3>Frontier</h3>
+                <p>Where research lives today. LLM alignment, world models, meta&#8209;learning.</p>
+            </div>
+            <div class="chapters-grid">
+                <article class="chapter-card"><div class="ch-num">12</div><h4>RLHF &amp; GRPO</h4><p>How modern LLMs get aligned. Reward heuristics, PPO-for-text, GRPO.</p></article>
+                <article class="chapter-card"><div class="ch-num">13</div><h4>Decision Transformers &amp; VLA</h4><p>RL as sequence modeling. Vision-language-action for robots.</p></article>
+                <article class="chapter-card"><div class="ch-num">14</div><h4>Productionizing RL</h4><p>Logging, eval, TensorBoard, reproducibility, pitfalls.</p></article>
+                <article class="chapter-card"><div class="ch-num">15</div><h4>Model-Based RL</h4><p>Plan inside a learned world. MBPO, PETS.</p></article>
+                <article class="chapter-card"><div class="ch-num">16</div><h4>Dreamer &amp; World Models</h4><p>Imagination-based RL. Latent dynamics, actor-critic in a dream.</p></article>
+                <article class="chapter-card"><div class="ch-num">17</div><h4>Meta-RL</h4><p>Agents that learn to learn. MAML, RL².</p></article>
+                <article class="chapter-card"><div class="ch-num">18</div><h4>Conclusion</h4><p>What you've built. Where to go next.</p></article>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section section-video" id="video">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-eyebrow">Trailer</div>
+            <h2>Two minutes, then you're in.</h2>
+        </div>
+        <div class="video-frame">
+            <iframe src="https://www.youtube.com/embed/kdmickVUd3c" title="Deep Reinforcement Learning: Zero to Hero! Introduction" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </div>
+</section>
+
+<section class="section section-prereq" id="prereq">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-eyebrow">Before you start</div>
+            <h2>Are you ready? <span class="cyan">Self-check.</span></h2>
+            <p class="section-lede">Tick the boxes you're comfortable with. You don't need all three — the more, the smoother.</p>
+        </div>
+        <div class="prereqs">
+            <label class="prereq">
+                <input type="checkbox" class="prereq-check">
+                <span class="prereq-box"></span>
+                <div class="prereq-text">
+                    <h3>Python proficiency</h3>
+                    <p>Classes, data structures, control flow. You read NumPy without squinting.</p>
+                </div>
+            </label>
+            <label class="prereq">
+                <input type="checkbox" class="prereq-check">
+                <span class="prereq-box"></span>
+                <div class="prereq-text">
+                    <h3>Deep learning &amp; PyTorch</h3>
+                    <p>You've trained a net. You know what <code>loss.backward()</code> does.</p>
+                </div>
+            </label>
+            <label class="prereq">
+                <input type="checkbox" class="prereq-check">
+                <span class="prereq-box"></span>
+                <div class="prereq-text">
+                    <h3>Math foundations</h3>
+                    <p>Basic calculus, linear algebra, probability. Expectation does not scare you.</p>
+                </div>
+            </label>
+        </div>
+        <div class="prereq-verdict" id="prereqVerdict">
+            <span class="verdict-icon">◦</span>
+            <span class="verdict-text">Tick what applies to you.</span>
+        </div>
+    </div>
+</section>
+
+<section class="section section-quickstart" id="quickstart">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-eyebrow">Quickstart</div>
+            <h2>Three commands. <span class="amber">You're training.</span></h2>
+            <p class="section-lede">The repo ships a Docker environment with notebooks, Python, and the Companion wired up. No local setup needed beyond Docker and git.</p>
+        </div>
+        <div class="code-block">
+            <div class="code-head">
+                <span class="code-lang">bash</span>
+                <button class="code-copy" id="copyCmd" type="button">Copy</button>
+            </div>
+<pre id="codePayload"><code><span class="c-cm"># Clone, then cd into the repo</span>
+git clone https://github.com/alessiodm/drl-zh.git &amp;&amp; cd drl-zh
+
+<span class="c-cm"># (Linux/macOS) pin your UID/GID for the container</span>
+printf "UID=$(id -u)\nGID=$(id -g)\n" &gt; .env
+
+<span class="c-cm"># Build and launch. Then open http://localhost:8080</span>
+docker compose up --build -d</code></pre>
+        </div>
+        <p class="quickstart-note">GPU? Append <code>-f docker-compose.gpu.yml</code>. Prefer a manual Python setup? See the <a href="https://github.com/alessiodm/drl-zh#readme">README</a>.</p>
+    </div>
+</section>
+
+<section class="section section-about">
+    <div class="container narrow">
+        <blockquote class="quote">
+            <div class="quote-mark">&ldquo;</div>
+            <p>I gathered years of scattered code I'd written and shaped it into a coherent course. For this third edition, AI became a collaborator — helping polish the prose, sharpen the algorithms, and build the Companion itself.</p>
+            <footer>— Alessio Della Motta</footer>
+        </blockquote>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="container footer-inner">
+        <div class="footer-cta">
+            <h2>Ready to go from zero to hero?</h2>
+            <div class="hero-ctas">
+                <a href="https://github.com/alessiodm/drl-zh" class="btn btn-primary">View on GitHub <span class="arrow">↗</span></a>
+                <a href="#quickstart" class="btn btn-secondary">Run it locally</a>
+            </div>
+        </div>
+        <div class="footer-meta">
+            <span>MIT licensed</span>
+            <span class="sep">·</span>
+            <span>Built with care</span>
+            <span class="sep">·</span>
+            <span>© 2026</span>
+        </div>
+    </div>
+</footer>
+
+<script src="main.js"></script>
 </body>
 </html>
